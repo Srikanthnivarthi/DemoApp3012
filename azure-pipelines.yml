@@ -70,6 +70,7 @@ jobs:
         definition: '33'  # $(Build.DefinitionId)
         buildVersionToDownload: 'latest'
         downloadType: 'single'
+        artifactName: 'drop'
         downloadPath: '$(Build.SourcesDirectory)'
 
     # Step 2: Copy Web API files to IIS server folder
