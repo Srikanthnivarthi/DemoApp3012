@@ -45,7 +45,7 @@ jobs:
       command: publish
       publishWebProjects: True
       projects: $(BuildParameters.RestoreBuildProjects)
-      arguments: --configuration $(BuildConfiguration) --output $(build.artifactstagingdirectory)/mywepapi2
+      arguments: --configuration $(BuildConfiguration) --output $(build.artifactstagingdirectory)
       zipAfterPublish: True
   - task: PublishBuildArtifacts@1
     displayName: Publish Artifact
@@ -78,7 +78,7 @@ jobs:
     - task: CopyFiles@2
       displayName: 'Copy Web API files to IIS folder'
       inputs:
-        SourceFolder: '$(build.artifactstagingdirectory)/mywebapi2' #'$(buildOutputFolder)/webapi'
+        SourceFolder: '$(build.artifactstagingdirectory)' #'$(buildOutputFolder)/webapi'
         Contents: '**'
         TargetFolder: 'C:\inetpub\wwwroot\mywebapi2'  # Change this path to your IIS folder   
     
