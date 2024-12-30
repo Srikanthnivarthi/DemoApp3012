@@ -51,7 +51,7 @@ jobs:
     displayName: Publish Artifact
     condition: succeededOrFailed()
     inputs:
-      PathtoPublish: $(build.artifactstagingdirectory)/webapi
+      PathtoPublish: $(build.artifactstagingdirectory)
       TargetPath: '\\my\share\$(Build.DefinitionName)\$(Build.BuildNumber)'
       ArtifactName: 'drop'
 - job: Deploy
@@ -77,7 +77,7 @@ jobs:
     - task: CopyFiles@2
       displayName: 'Copy Web API files to IIS folder'
       inputs:
-        SourceFolder: '$(build.artifactstagingdirectory)/webapi' #'$(buildOutputFolder)/webapi'
+        SourceFolder: '$(build.artifactstagingdirectory)' #'$(buildOutputFolder)/webapi'
         Contents: '**'
         TargetFolder: 'C:\inetpub\wwwroot\mywebapi'  # Change this path to your IIS folder   
     
