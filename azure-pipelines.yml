@@ -80,5 +80,6 @@ jobs:
       inputs:
         SourceFolder: '$(build.artifactstagingdirectory)' #'$(buildOutputFolder)/webapi'
         Contents: '**'
-        TargetFolder: 'C:\inetpub\wwwroot\mywebapi'  # Change this path to your IIS folder   
+        TargetFolder: 'C:\inetpub\wwwroot\mywebapi2'  # Change this path to your IIS folder   
+      
     
