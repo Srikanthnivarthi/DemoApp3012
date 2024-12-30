@@ -15,7 +15,7 @@ trigger:
     include:
     - refs/heads/master
 pool:
-  name: 'Default'  # The pool name for your self-hosted agent, replace with the actual pool name
+  name: 'Neotechagentpool'  # The pool name for your self-hosted agent, replace with the actual pool name
 name: $(date:yyyyMMdd)$(rev:.r)
 jobs:
 - job: Job_1
@@ -57,6 +57,8 @@ jobs:
   displayName: 'Deploy to IIS Web Server'
   dependsOn: Job_1
   condition: succeeded()
+  pool:
+    name: 'Neotechagentpool'  # Ensure this is the correct pool with your self-hosted agent
   steps:
     # Step 1: Download build artifacts
     - task: DownloadBuildArtifacts@0
