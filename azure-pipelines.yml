@@ -77,7 +77,7 @@ jobs:
     - task: CopyFiles@2
       displayName: 'Copy Web API files to IIS folder'
       inputs:
-        SourceFolder: '$(buildOutputFolder)/webapi'
+        SourceFolder: '$(build.artifactstagingdirectory)/webapi' #'$(buildOutputFolder)/webapi'
         Contents: '**'
         TargetFolder: 'C:\inetpub\wwwroot\mywebapi'  # Change this path to your IIS folder   
     
