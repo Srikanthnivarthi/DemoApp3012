@@ -78,7 +78,7 @@ jobs:
         buildVersionToDownload: 'latest'
         downloadType: 'single'
         artifactName: 'drop'
-        downloadPath: '$(Build.SourcesDirectory)'
+        downloadPath: '$(build.artifactstagingdirectory)' #'$(Build.SourcesDirectory)'
     - task: CmdLine@2
       inputs:
           script: |
