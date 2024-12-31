@@ -91,7 +91,7 @@ jobs:
       inputs:
         SourceFolder: '$(build.artifactstagingdirectory)' #'$(buildOutputFolder)/webapi'
         Contents: '**'
-        TargetFolder: 'C:\inetpub\wwwroot'  # Change this path to your IIS folder   
+        TargetFolder: 'C:\inetpub\wwwroot\myfolder'  # Change this path to your IIS folder   
     - task: CmdLine@2
       inputs:
           script: |
