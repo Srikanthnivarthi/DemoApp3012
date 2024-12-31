@@ -32,6 +32,12 @@ jobs:
       ConnectedServiceName: a052c6a2-b1e2-446d-a8e4-9886931a5000
       command: restore
       projects: $(BuildParameters.RestoreBuildProjects)
+  - task: CmdLine@2
+    inputs:
+          script: |
+            echo Hello world-1
+            echo  $(Build.ArtifactStagingDirectory)
+            echo Hello world-1
   - task: DotNetCoreCLI@2
     displayName: Build
     inputs:
@@ -73,7 +79,12 @@ jobs:
         downloadType: 'single'
         artifactName: 'drop'
         downloadPath: '$(Build.SourcesDirectory)'
-
+    - task: CmdLine@2
+      inputs:
+          script: |
+            echo Hello world-2
+            echo  $(Build.SourcesDirectory)
+            echo Hello world-2
     # Step 2: Copy Web API files to IIS server folder
     - task: CopyFiles@2
       displayName: 'Copy Web API files to IIS folder'
