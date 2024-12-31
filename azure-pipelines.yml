@@ -35,7 +35,7 @@ jobs:
   - task: CmdLine@2
     inputs:
           script: |
-            echo Hello world-1
+            echo Artifact staging directory-Hello world-1
             echo  $(Build.ArtifactStagingDirectory)
             echo Hello world-1
   - task: DotNetCoreCLI@2
@@ -92,4 +92,13 @@ jobs:
         SourceFolder: '$(build.artifactstagingdirectory)' #'$(buildOutputFolder)/webapi'
         Contents: '**'
         TargetFolder: 'C:\inetpub\wwwroot'  # Change this path to your IIS folder   
-    
+    - task: CmdLine@2
+      inputs:
+          script: |
+            echo Artifact staging directory-Hello world-3
+            echo  $(Build.ArtifactStagingDirectory)
+            echo Hello world-3
+
+            echo Sources Directory- Hello world-3
+            echo  $(Build.SourcesDirectory)
+            echo Hello world-3
